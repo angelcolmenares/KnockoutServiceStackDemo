@@ -58,7 +58,7 @@ namespace KnockoutServiceStackDemo
 
 			//Set MVC to use the same Funq IOC as ServiceStack
 			ControllerBuilder.Current.SetControllerFactory(new FunqControllerFactory(container));
-			ServiceStackController.CatchAllController = reqCtx => container.TryResolve<HomeController>();
+			//ServiceStackController.CatchAllController = reqCtx => container.TryResolve<HomeController>();
 		}
 	}
 }
