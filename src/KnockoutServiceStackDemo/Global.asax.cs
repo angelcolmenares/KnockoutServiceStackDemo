@@ -37,6 +37,8 @@ namespace KnockoutServiceStackDemo
 			RegisterGlobalFilters(GlobalFilters.Filters);
 			RegisterRoutes(RouteTable.Routes);
 			ModelBinders.Binders.DefaultBinder = new KnockoutModelBinder();
+			AppHost appHost= new AppHost();
+			appHost.Init();
 		}
 
 		protected void Application_BeginRequest(object sender, EventArgs e)

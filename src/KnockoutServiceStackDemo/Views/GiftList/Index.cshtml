@@ -12,7 +12,8 @@
         <tr>
           <td>Gift name:@items.Html.TextBox(item => item.Title, new { @class = "required" }).UniqueName()</td>
           <td>Price: $@items.Html.TextBox(item => item.Price, new { @class = "required number" }).UniqueName()</td>
-          <td>@ko.Html.Button("Delete", "RemoveGift", "GiftList", new { index = items.GetIndex() })</td>
+          <td>@ko.Html.Button("Delete", "RemoveGift", "GiftList", new { index = items.GetIndex() })</td> 
+          
         </tr>
       }
     </tbody>

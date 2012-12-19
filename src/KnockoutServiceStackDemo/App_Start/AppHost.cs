@@ -8,6 +8,7 @@ using ServiceStack.Configuration;
 using ServiceStack.Mvc;
 using ServiceStack.WebHost.Endpoints;
 using KnockoutServiceStackDemo.Controllers;
+using KnockoutServiceStackDemo.Models;
 
 namespace KnockoutServiceStackDemo
 {
@@ -33,6 +34,16 @@ namespace KnockoutServiceStackDemo
 			//container.Register<ICacheClient>(new MemoryCacheClient());
 			//Configure an alt. distributed peristed cache that survives AppDomain restarts. e.g Redis
 			//container.Register<IRedisClientsManager>(c => new PooledRedisClientManager("localhost:6379"));
+
+			var model = new GiftListModel
+			  {
+			    Gifts = new List<GiftModel>
+			        {
+			          new GiftModel {Title = "Tall Hat", Price = 49.95},
+			          new GiftModel {Title = "Long Cloak", Price = 78.25}
+			        }
+			  };
+			container.Register<GiftListModel>( model);
 
 			//Enable Authentication an Registration
 			//ConfigureAuth(container);
